@@ -1,0 +1,26 @@
+:root{
+    /* --primary-color : green; */
+    --primary-color : #43f3ff;
+    --background-theme-color : #23242a;
+    --text-color: #8f8f8f;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    border: 1px solid red;
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    background-color: var(--background-theme-color);
+    height: 500px;
+    width: 450px;
+    border-radius: 8px;
+    /* margin-top: 25%; */
+}
