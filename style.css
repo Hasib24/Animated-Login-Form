@@ -147,7 +147,6 @@ body{
     pointer-events: none;
     transition: 0.5s;
 }
-.inputBox input:valid ~ i,
 .inputBox input:focus ~ i{
     height: 38px;
 }
@@ -191,3 +190,4 @@ body{
 input[type="submit"]:hover{
     opacity: 0.8;
 }
+/* dummy text  */

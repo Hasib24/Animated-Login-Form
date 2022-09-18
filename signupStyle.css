@@ -1,26 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
 :root{
     /* --primary-color : green; */
     --primary-color : #43f3ff;
     --background-theme-color : #23242a;
     --text-color: #8f8f8f;
+    --box-height: 600px;
+    --box-width: 450px;
+    --link-color:var(--primary-color)
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 .container{
-    border: 1px solid red;
+    
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.form{
     background-color: var(--background-theme-color);
-    height: 500px;
-    width: 450px;
+}
+.box{
+    position: relative;
+    background-color: #000;
+    height: var(--box-height);
+    width: var(--box-width);
     border-radius: 8px;
+    overflow: hidden;
     /* margin-top: 25%; */
+}
+.box::before{
+    position: absolute;
+    content: "";
+    left: -50%;
+    top: -50%;
+    height: var(--box-height);
+    width: var(--box-width);
+    background: linear-gradient(0deg, transparent, var(--primary-color), var(--primary-color));
+    transform-origin: bottom right;
+    animation: rotetingAnimation 6s linear infinite ;
+}
+
+
+.box::after{
+    position: absolute;
+    content: "";
+    left: -50%;
+    top: -50%;
+    height: var(--box-height);
+    width: var(--box-width);
+    background: linear-gradient(0deg, transparent, var(--primary-color), var(--primary-color));
+    transform-origin: bottom right;
+    animation: rotetingAnimation 6s linear infinite ;
+    animation-delay: -3s;
+}
+
+
+@keyframes tetingAnimation {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
+
+ .form{
+    z-index: 5;
+    position: absolute;
+    inset: 2px;
+    background-color: #23242a;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+}
+.form h2{
+    text-align: center;
+    color: var(--primary-color);
+}
+#formCaption{
+    text-align: center;
+    color: var(--text-color);
+}
+
+/*---------------- inside form---------------------  */
+/* -----------------------name and surename ---------------- */
+.inputBox{
+    margin: 30px 0;
+    position: relative;
+    
+}
+#nameGroup{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 ;
+    height: 2rem;
+}
+.inputGroup1, .inputGroup2{
+    position: relative;
+    width: 47%;
+}
+#firstName,#sureName{
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    border: none;
+    outline: none;
+    left: 0;
+    bottom: 0;
+    padding: 0 5px;
+    font-size: 1rem;
+    color: #000;
+    z-index: 15;
+}
+.inputGroup1 span,
+.inputGroup2 span{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    font-size: 1rem;
+    padding: 5px 0;
+    font-weight: 400;
+    transition: 0.5s;
+    pointer-events: none;   
+    color:var(--primary-color)
+}
+#firstName:focus ~ span,
+#firstName:valid ~ span,
+#sureName:focus ~ span,
+#sureName:valid ~ span
+{
+    color: var(--primary-color);
+    transform: translateY(-25px);
+    font-size: 0.75rem;
+}
+.inputGroup1 i, .inputGroup2 i{
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--primary-color);
+    transition: 0.5s;
+    pointer-events: none;
+    border-radius: 4px;
+}
+#firstName:focus ~ i,
+#firstName:valid ~ i,
+#sureName:focus ~ i,
+#sureName:valid ~ i
+{
+    height: 25px;
+}
+
+
+/* -----------------------mobile address and password ---------------- */
+
+.inputBox input,.inputBox span,.inputBox i{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 4px;
+    
+
+}
+
+.inputBox input{
+    z-index: 19;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0 5px;
+}
+.inputBox span{
+    color: var(--primary-color);
+    padding-bottom: 5px;
+    transition: 0.5s;
+}
+.inputBox i{
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    transform: translateY(-25px);
+    font-size: 0.75rem;
+}
+
+.inputBox input:focus ~ i,
+.inputBox input:valid ~ i{
+    height: 25px;
+}
+
+/* --------------------- date of birth ---------------------- */
+.dob{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.dob select{
+    background: transparent;
+    font-size: 1rem;
+    padding: 5px 20px;
+    color: var(--primary-color);
+    border-radius: 8px;
+}
+#dobId{
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/* ---------------- Gender-------------- */
+.gender{
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+.genderInput{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+
+/* ---------------- paragraph of term and policy-------------- */
+.termPolicy{
+    color: var(--text-color);
+    font-size: 0.7rem;
+    line-height: 0.75rem;
+    margin-top: 10px;
+}
+.termPolicy a{
+    text-decoration: none;
+    text-align: justify;
+}
+/* ------------------------submit----------------------------- */
+input[type="submit"]{
+    background-color: var(--primary-color);
+    border: none;
+    padding: 5px 20px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    width: 100px;
+    margin-top: 10px;
 }
