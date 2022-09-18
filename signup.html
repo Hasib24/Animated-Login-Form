@@ -9,9 +9,82 @@
 </head>
 <body>
     <div class="container">
-        <form action="" class="form">
-            <p>Go</p>
-        </form>
+        <div class="box">
+            <form action="" class="form">
+                <h2>Sign up</h2>
+                <span id="formCaption">It's quick and easy.</span>
+                <!-- first name and surename  -->
+                <div class="" id="nameGroup">
+                    <div class="inputGroup1">
+                        <input type="text" name="" id="firstName" required>
+                        <span>First Name</span>
+                        <i></i>
+                    </div>
+                    <div class="inputGroup2">
+                        <input type="text" name="" id="sureName" required>
+                        <span>Surname</span>
+                        <i></i>
+                    </div>
+                </div>
+
+                <!-- number and mail -->
+                <div class="inputBox">
+                    <input type="text" name=""  required>
+                    <span>Mobile number or email address</span>
+                    <i></i>
+                </div>
+
+                <!-- new password -->
+                <div class="inputBox">
+                    <input type="password" name="" id="password" required>
+                    <span>New password</span>
+                    <i></i>
+                </div>
+
+                <!-- date of birth  -->
+                <span id="dobId">Date of birth</span>
+                <div class="dob">
+                    <select name="" id="">
+                        <option value="0">15</option>
+                        <option value="1">16</option>
+                        <option value="2">17</option>
+                        <option value="3">18</option>
+                        <option value="4">19</option>
+                        <option value="5">20</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="0">Sep</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="0">2022</option>
+                    </select>
+                </div>
+
+                <div class="gender">
+                    <span>Gender</span>
+                    <div class="genderInput">
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" id="male">
+
+                        <label for="female">Female</label>
+                        <input type="radio" name="gender" id="female" >
+
+                        <label for="custom">Custom</label>
+                        <input type="radio" name="gender" id="custom">
+                    </div>
+                </div>
+                <p class="termPolicy">
+                    People who use our service may have uploaded your contact information
+                    to Facebook.<a href="#"> Learn more</a><br>
+                    <br>
+                    By clicking Sign Up, you agree to our Terms, <a href="#">Privacy Policy</a>
+                    and <a href="#">Cookies Policy</a>. You may recieve SMS notifications from us
+                    and can opt out at any time.
+                </p>
+                <input type="submit" name="" id="" value="Sign Up">
+            </form>
+            
+        </div>
     </div>
     <div class="dummySection">
         <a href="index.html">Back to Main</a>
@@ -33,6 +106,6 @@
                 opacity: 0.8;
             }
         </style>
-    </div>
+    </div> 
 </body>
 </html>
