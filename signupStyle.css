@@ -26,7 +26,7 @@
 }
 .box{
     position: relative;
-    background-color: #000;
+    background-color: #1c1c1c;
     height: var(--box-height);
     width: var(--box-width);
     border-radius: 8px;
@@ -60,7 +60,7 @@
 }
 
 
-@keyframes tetingAnimation {
+@keyframes rotetingAnimation {
     0%{
         transform: rotate(0deg);
     }100%{
@@ -82,6 +82,8 @@
 .form h2{
     text-align: center;
     color: var(--primary-color);
+    letter-spacing: 0.1rem;
+    font-weight: 500;
 }
 #formCaption{
     text-align: center;
@@ -91,14 +93,15 @@
 /*---------------- inside form---------------------  */
 /* -----------------------name and surename ---------------- */
 .inputBox{
-    margin: 30px 0;
+    margin-top: 50px;
     position: relative;
     
 }
 #nameGroup{
     display: flex;
     justify-content: space-between;
-    margin: 20px 0 ;
+    /* margin: 20px 0 ; */
+    margin-top: 20px;
     height: 2rem;
 }
 .inputGroup1, .inputGroup2{
@@ -125,11 +128,12 @@
     left: 0;
     bottom: 0;
     font-size: 1rem;
-    padding: 5px 0;
+    padding: 2px 0;
+    letter-spacing: 0.05rem;
     font-weight: 400;
     transition: 0.5s;
     pointer-events: none;   
-    color:var(--primary-color)
+    color:var(--text-color)
 }
 #firstName:focus ~ span,
 #firstName:valid ~ span,
@@ -182,9 +186,10 @@
     padding: 0 5px;
 }
 .inputBox span{
-    color: var(--primary-color);
-    padding-bottom: 5px;
+    color: var(--text-color);
+    padding-bottom: 2px;
     transition: 0.5s;
+    letter-spacing: 0.05rem;
 }
 .inputBox i{
     height: 2px;
@@ -196,6 +201,7 @@
 .inputBox input:focus ~ span{
     transform: translateY(-25px);
     font-size: 0.75rem;
+    color: var(--primary-color);
 }
 
 .inputBox input:focus ~ i,
@@ -207,31 +213,51 @@
 .dob{
     display: flex;
     justify-content: space-between;
+    padding: 0 7px;
     
 }
 .dob select{
     background: transparent;
     font-size: 1rem;
     padding: 5px 20px;
-    color: var(--primary-color);
-    border-radius: 8px;
+    color: var(--text-color);
+    border-radius: 4px;
+    border: 1px solid;
 }
 #dobId{
-    color: var(--text-color);
+    margin: 15px 0 5px 0;
+    color: var(--primary-color);
     font-size: 1rem;
-    font-weight: 600;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
 }
 
 
 /* ---------------- Gender-------------- */
 .gender{
     color: var(--primary-color);
-    margin-top: 10px;
+    margin: 10px 0 0 0;
+    
+
+    
 }
 .genderInput{
     display: flex;
+    padding: 0 5px;
+}
+
+.genderInput div{
+    border: 1px solid;
+    border-radius: 4px;
+    margin-right: 15px;
+    padding: 5px 15px;
+    width: 30%;
+    display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+}
+.genderInput div:nth-child(3){
+    margin-right: 0;
+    padding: 5px 12px;
 }
 
 
@@ -250,10 +276,16 @@
 input[type="submit"]{
     background-color: var(--primary-color);
     border: none;
-    padding: 5px 20px;
+    padding: 5px 10px;
     font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
     border-radius: 4px;
-    width: 100px;
+    width: 150px;
     margin-top: 10px;
+    cursor: pointer;
 
+}
+input[type="submit"]:hover{
+    opacity: 0.8;
 }

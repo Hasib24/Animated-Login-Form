@@ -63,14 +63,20 @@
                 <div class="gender">
                     <span>Gender</span>
                     <div class="genderInput">
-                        <label for="male">Male</label>
-                        <input type="radio" name="gender" id="male">
+                        <div>
+                            <label for="male">Male</label>
+                            <input type="radio" name="gender" id="male">
+                            
+                        </div>
+                        <div>
+                            <label for="female">Female</label>
+                            <input type="radio" name="gender" id="female" >
+                        </div>
 
-                        <label for="female">Female</label>
-                        <input type="radio" name="gender" id="female" >
-
-                        <label for="custom">Custom</label>
-                        <input type="radio" name="gender" id="custom">
+                        <div>
+                            <label for="custom">Custom</label>
+                            <input type="radio" name="gender" id="custom">
+                        </div>
                     </div>
                 </div>
                 <p class="termPolicy">
@@ -102,6 +108,7 @@
                 padding: 10px 12px;
                 border-radius: 4px;
                 inset: auto 10px 10px auto;
+                box-shadow: 1px 1px 5px 1px #fff;
             }
             .dummySection a:hover{
                 opacity: 0.8;
